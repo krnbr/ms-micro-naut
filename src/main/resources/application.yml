@@ -1,3 +1,16 @@
 micronaut:
   application:
     name: ms-micro-naut
+  server:
+    port: ${random.port}
+
+endpoints:
+  routes:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+    sensitive: false
+  all:
+    enabled: true
+    sensitive: false
