@@ -13,6 +13,7 @@ version "0.1"
 group "in.n6h.micronaut"
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven { url "https://jcenter.bintray.com" }
 }
@@ -36,10 +37,14 @@ dependencies {
     compile "io.micronaut:micronaut-runtime"
     compile "io.micronaut:micronaut-http-client"
     compile "io.micronaut:micronaut-http-server-netty"
-    compile 'io.micronaut:micronaut-management'
-    compile 'io.micronaut.configuration:micronaut-micrometer-registry-atlas'
+    compile "io.micronaut:micronaut-management"
+    compile "io.micronaut.configuration:micronaut-micrometer-registry-statsd"
+    compile "io.micronaut.configuration:micronaut-micrometer-core"
+    compile "org.springframework.security:spring-security-crypto:latest.release"
+    compile "org.springframework:spring-jcl:latest.release"
     runtime "ch.qos.logback:logback-classic:1.2.3"
-    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
+    compileOnly "io.micronaut:micronaut-inject-java"
+    runtime "ch.qos.logback:logback-classic:1.2.3"
     testCompile "org.junit.jupiter:junit-jupiter-api"
     testCompile "io.micronaut.test:micronaut-test-junit5"
     testRuntime "org.junit.jupiter:junit-jupiter-engine"
