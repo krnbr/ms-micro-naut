@@ -1,15 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <withJansi>false</withJansi>
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-        <encoder>
-            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <fieldNames>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+            </fieldNames>
         </encoder>
     </appender>
 
-    <root level="info">
-        <appender-ref ref="STDOUT" />
-    </root>
+    <logger name="root" additivity="false" level="info">
+        <appender-ref ref="consoleAppender"/>
+    </logger>
+
 </configuration>
