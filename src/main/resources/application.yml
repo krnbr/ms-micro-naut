@@ -10,6 +10,7 @@ eureka:
       enabled: true
       hostname: "${MS_MICRO_NAUT_SERVICE_HOST:localhost}"
       port: "${micronaut.server.port}"
+      instance-id: "${MS_MICRO_NAUT_SERVICE_HOST:localhost}"
       vip-address: "${micronaut.application.name}"
       ip-address: "${MS_MICRO_NAUT_SERVICE_IP_ADDR:127.0.0.1}"
       registerWithEureka: true
